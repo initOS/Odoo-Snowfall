@@ -1,2 +1,9 @@
 **/*-min.js
 **/*.min.js
+# Note: To suppress the informative warning
+#     File ignored because of a matching ignore pattern.
+# during execution of `eslint`, rather than putting the ignore pattern
+# **/lib/**
+# here, do put the `eslint-disable` directive at the top of the file(s).
+# This way, the file is ignored, but no warning is shown, which results in a
+# cleaner CI report.
