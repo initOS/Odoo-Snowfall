@@ -1,0 +1,54 @@
+/* © 2023 initOS GmbH
+ * License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
+ */
+
+div#snow {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 9998;
+    pointer-events: none;
+}
+
+input#toggle-snow {
+    display: none;
+}
+input#toggle-snow + label {
+    display: inline-block;
+    font-size: larger;
+}
+input#toggle-snow:checked + label:before {
+    color: #c0ffc0;
+}
+input#toggle-snow:not(:checked) + label:before {
+    color: #ffc0c0;
+}
+
+.snowflake {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background: linear-gradient(white, white);
+    /* Workaround for Chromium's selective color inversion */
+    border-radius: 50%;
+    filter: drop-shadow(0 0 10px black);
+}
+/* "null transform hack" to cut down CPU usage; seems to be browser-dependent
+ * https://stackoverflow.com/questions/13176746/css-keyframe-animation-cpu-usage-is-high-should-it-be-this-way
+ */
+.snowflake {
+    transform: translate3d(0, 0, 0);
+    backface-visibility: hidden;
+    perspective: 1000;
+    /*
+    will-change: transform;
+    */
+}
+/* for snowflake text element */
+.snowflake.fa {
+    color: white;
+    background: transparent;
+    filter: drop-shadow(0 0 3px #6060ff);
+}

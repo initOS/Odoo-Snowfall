@@ -1,3 +1,3 @@
-# Xmas Theme
+# Odoo Snowfall
 
-This repository contains Odoo addons for Christmas.
+This repository contains Odoo addons for a snowfall effect.
