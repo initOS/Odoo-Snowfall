@@ -1,0 +1,12 @@
+variables:
+  COMPOSE_PROJECT_NAME: "$CI_JOB_ID"
+
+stages:
+  - testing
+
+# Run the tests in parallel
+job_test_pre-commit:
+  stage: testing
+  tags:
+    - apollo
+  script: pre-commit run --all

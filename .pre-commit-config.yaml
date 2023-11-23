@@ -1,0 +1,48 @@
+repos:
+  - repo: https://github.com/psf/black
+    rev: 22.3.0
+    hooks:
+      - id: black
+
+  - repo: https://github.com/pre-commit/mirrors-prettier
+    rev: v2.1.2
+    hooks:
+      - id: prettier
+        name: prettier + plugin-xml
+        additional_dependencies:
+          - "prettier@2.1.2"
+          - "@prettier/plugin-xml@0.12.0"
+        args:
+          - --plugin=@prettier/plugin-xml
+
+  - repo: https://github.com/pre-commit/mirrors-eslint
+    rev: v7.8.1
+    hooks:
+      - id: eslint
+        verbose: true
+        args:
+          - --color
+          - --fix
+
+  - repo: https://github.com/PyCQA/flake8
+    rev: 3.8.3
+    hooks:
+      - id: flake8
+        additional_dependencies: [flake8-bugbear]
+
+  - repo: https://github.com/PyCQA/isort
+    rev: 5.5.1
+    hooks:
+      - id: isort
+        name: isort
+
+  - repo: https://github.com/PyCQA/pylint
+    rev: v2.11.1
+    hooks:
+      - id: pylint
+        name: pylint
+        args:
+          - --exit-zero
+        verbose: true
+        additional_dependencies: &pylint_deps
+          - pylint-odoo==6.2.0
