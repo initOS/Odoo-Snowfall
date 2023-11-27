@@ -16,6 +16,9 @@
             "web_snowfall/static/lib/pure-snow.js",
         ],
     },
+    "images": [
+        "images/main_screenshot.png",
+    ],
     "depends": [
         "web",
     ],
