@@ -3,7 +3,7 @@
 {
     "name": "Snowfall",
     "version": "16.0.1.0.0",
-    "category": "Theme",
+    "category": "Web",
     "author": "initOS GmbH",
     "website": "https://www.initos.com",
     "license": "AGPL-3",
